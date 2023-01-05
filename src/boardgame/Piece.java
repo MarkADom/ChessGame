@@ -7,6 +7,7 @@ public class Piece {
 
     public Piece(Board board) {
         this.board = board;
+        position = null;
     }
 
     //Only classes and subclasses in the same package can access.
