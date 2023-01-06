@@ -25,27 +25,41 @@ public class Board {
 
     //Method to return matrix "pieces" in the row and column
     public Piece piece(int row, int column) {
-        if(!positionExists(row,column)){
+        if (!positionExists(row, column)) {
             throw new BoardException("Position not on the board");
         }
         return pieces[row][column];
     }
 
     public Piece piece(Position position) {
-        if(!positionExists(position)){
+        if (!positionExists(position)) {
             throw new BoardException("Position not on the board");
         }
         return pieces[position.getRow()][position.getColumn()];
     }
 
-    //Method to place a piece on a certain position
+    //To place a piece on a certain position
     public void placePiece(Piece piece, Position position) {
         //Checking the position is occupied
-        if(thereIsAPiece(position)){
+        if (thereIsAPiece(position)) {
             throw new BoardException("There is already a piece on position " + position);
         }
         pieces[position.getRow()][position.getColumn()] = piece;
         piece.position = position;
+    }
+
+    //To remove a piece from certain position
+    public Piece removePiece(Position position) {
+        if (!positionExists(position)) {
+            throw new BoardException("Position not on the board");
+        }
+        if (piece(position) == null) {
+            return null;
+        }
+        Piece aux = piece(position);
+        aux.position = null;
+        pieces[position.getRow()][position.getColumn()] = null;
+        return aux;
     }
 
     //Method to check if the position exist on the board and is not out of boundaries
@@ -58,9 +72,11 @@ public class Board {
     }
 
     public boolean thereIsAPiece(Position position) {
-        if(!positionExists(position)){
+        if (!positionExists(position)) {
             throw new BoardException("Position not on the board");
         }
         return piece(position) != null;
     }
+
+
 }
