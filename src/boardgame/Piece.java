@@ -16,12 +16,10 @@ public abstract class Piece {
 
     public abstract boolean[][] possibleMoves();
 
-
     //Concrete method using abstract method, its call "Hook Method"
     public boolean possibleMove(Position position) {
         return possibleMoves()[position.getRow()][position.getColumn()];
     }
-
 
     //Concrete implementation depending on an abstract method
     public boolean isThereAnyPossibleMove() {
@@ -35,6 +33,4 @@ public abstract class Piece {
         }
         return false;
     }
-
-
 }
