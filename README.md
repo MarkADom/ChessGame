@@ -1,4 +1,4 @@
 # ChessGame
-This Project is made for JVA study and to be added to my personal Library of Implementations.
+This Project is made for JAVA study and to be added to my personal Library of Implementations.
 
 ##  Description 
