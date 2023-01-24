@@ -7,4 +7,6 @@ Chess game can be run in the terminal. Played by two players in turns. For that,
 
 ## Project Description
 
+To run the gamme acess `bin` folder through the terminal using `java application/Program`
+
 
